@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftsmanship & Metiers d'Art | AURELIUS & CO.</title>
+    
+    <meta name="description" content="Explore the extraordinary craft, high complications, hand-turned guilloché, and bespoke commissioning experience at Aurelius Haute Horlogerie.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Official Supabase JS Client (v2) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="luxury-noise"></div>
+
+    <!-- Navigation Header -->
+    <header class="luxury-header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">AURELIUS</span>
+                    <span class="brand-sub">GENÈVE • 1888</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Maison</a></li>
+                <li><a href="about.html" class="nav-link">Heritage</a></li>
+                <li><a href="experience.html" class="nav-link active">Craftsmanship</a></li>
+                <li><a href="contact.html" class="nav-link">Salons & Inquiries</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="supabase-status-pill" id="supabaseStatusBtn" title="Supabase Database Status">
+                    <span class="status-dot"></span>
+                    <span>Supabase Live</span>
+                </div>
+                <a href="contact.html#vip-appointment" class="btn-gold">Private Viewing</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 60vh; padding: 11rem 0 4rem; text-align: center;">
+        <div class="container">
+            <span class="section-tag">Haute Horlogerie Ateliers</span>
+            <h1 class="hero-title">The Art of <span class="gold-gradient-text">Metiers d'Art</span></h1>
+            <p class="section-desc" style="margin-top: 1rem;">
+                Where science, metallurgical alchemy, and centuries of artisan discipline converge to create kinetic works of fine art.
+            </p>
+        </div>
+    </section>
+
+    <!-- Complications Showcase -->
+    <section class="craftsmanship-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Master Complications</span>
+                <h2 class="section-title">The Mechanical Wonders</h2>
+                <p class="section-desc">Each complication engineered, adjusted, and hand-finished to supreme chronometric standards.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <span class="pillar-num">I</span>
+                    <h3 class="pillar-title">Astronomical Moonphase</h3>
+                    <p class="pillar-desc">Accurate to one single lunar day deviation every 122.6 years, our moonphase discs are laser-etched on solid gold and set in midnight blue aventurine glass.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">II</span>
+                    <h3 class="pillar-title">Cathedral Minute Repeater</h3>
+                    <p class="pillar-desc">Tuned by master acoustic artisans, the circular gongs wrap twice around the caliber to project crystal-clear harmonic chimes for hours, quarters, and minutes.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">III</span>
+                    <h3 class="pillar-title">Perpetual Secular Calendar</h3>
+                    <p class="pillar-desc">A mechanical memory calculating leap years, centuries, and non-leap century years (2100, 2200, 2300) without requiring manual correction for over four centuries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bespoke Commissioning Step-by-Step Flow -->
+    <section class="bespoke-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Private Journey</span>
+                <h2 class="section-title">The Bespoke Commissioning Journey</h2>
+                <p class="section-desc">From initial private consultation to final hand-delivery in our Geneva salon.</p>
+            </div>
+
+            <div class="salons-grid">
+                <div class="salon-card">
+                    <h3 class="salon-city">01. Private Salon Consultation</h3>
+                    <p class="salon-address">Meet with our Master Horologist in Geneva, London, or via encrypted video concierge to define your technical requirements, complication wishes, and metallurgical preferences.</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">02. Hand-Drawn Blueprints</h3>
+                    <p class="salon-address">Our artisans draft bespoke case architecture, personalized guilloché patterns, custom engraved caseback inscriptions, and unique rotor motifs.</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">03. Ateliers & Hand-Finishing</h3>
+                    <p class="salon-address">Over 300-600 hours of artisanal hand-beveling, black polishing, balance spring regulation, and assembly in the Vallée de Joux.</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">04. Private Hand-Delivery</h3>
+                    <p class="salon-address">Delivered in a handcrafted Swiss walnut presentation box with permanent archival documentation, VIP passport, and bespoke warranty.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="contact.html#bespoke-inquiry" class="btn-gold"><i class="fas fa-feather-alt"></i> Begin Your Bespoke Commission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1rem;">
+                        <span class="brand-name">AURELIUS & CO.</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Independent Haute Horlogerie manufacture dedicated to the eternal pursuit of mechanical poetry and Swiss watchmaking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Maison</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">Manufacture History</a></li>
+                        <li><a href="experience.html">Bespoke Atelier</a></li>
+                        <li><a href="contact.html">Global Salons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Disciplines</h4>
+                    <ul class="footer-nav">
+                        <li><a href="experience.html">Flying Tourbillons</a></li>
+                        <li><a href="experience.html">Grand Feu Enamelling</a></li>
+                        <li><a href="experience.html">Minute Repeaters</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Private Concierge</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">VIP Appointments</a></li>
+                        <li><a href="contact.html#bespoke-inquiry">Custom Commission</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelius & Co. Haute Horlogerie. All rights reserved.</p>
+                <p>Connected with Supabase Database</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/supabase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

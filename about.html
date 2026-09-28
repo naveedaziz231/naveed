@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage & Lineage | AURELIUS & CO. Haute Horlogerie</title>
+    
+    <meta name="description" content="Discover the centuries-old heritage, master watchmakers, and horological philosophy behind Aurelius & Co. in the Vallée de Joux, Switzerland.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Official Supabase JS Client (v2) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="luxury-noise"></div>
+
+    <!-- Navigation Header -->
+    <header class="luxury-header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">AURELIUS</span>
+                    <span class="brand-sub">GENÈVE • 1888</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Maison</a></li>
+                <li><a href="about.html" class="nav-link active">Heritage</a></li>
+                <li><a href="experience.html" class="nav-link">Craftsmanship</a></li>
+                <li><a href="contact.html" class="nav-link">Salons & Inquiries</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="supabase-status-pill" id="supabaseStatusBtn" title="Supabase Database Status">
+                    <span class="status-dot"></span>
+                    <span>Supabase Live</span>
+                </div>
+                <a href="contact.html#vip-appointment" class="btn-gold">Private Viewing</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 60vh; padding: 11rem 0 4rem; text-align: center;">
+        <div class="container">
+            <span class="section-tag">Centuries of Master Watchmaking</span>
+            <h1 class="hero-title">Our Heritage & <span class="gold-gradient-text">Lineage</span></h1>
+            <p class="section-desc" style="margin-top: 1rem;">
+                "Where mechanical engineering ceases, Haute Horlogerie begins — transforming raw gold, steel, and ruby into eternal celestial song."
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline & Historical Chronicles -->
+    <section class="heritage-section" style="border-top: none;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Historical Milestones</span>
+                <h2 class="section-title">A Chronology of Innovation</h2>
+                <p class="section-desc">Key moments that defined the Aurelius aesthetic and mechanical legacy.</p>
+            </div>
+
+            <div class="pillars-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="pillar-card">
+                    <span class="pillar-num">1888</span>
+                    <h3 class="pillar-title">Founding in Le Brassus</h3>
+                    <p class="pillar-desc">Antoine Aurelius establishes the first independent horological workshop in the high cradle of Swiss watchmaking, dedicated exclusively to pocket chronometers with minute repeaters.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">1934</span>
+                    <h3 class="pillar-title">The First Flying Tourbillon</h3>
+                    <p class="pillar-desc">Pioneering the cantilevered tourbillon bridge, freeing the escapement cage from upper support for unmatched visual clarity and gravity compensation.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">PRESENT</span>
+                    <h3 class="pillar-title">The Modern Renaissance</h3>
+                    <p class="pillar-desc">Combining classical Grand Feu enamelling and hand-turned guilloché with cutting-edge tantalum metallurgies and bespoke collector commissions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Manufacture Values -->
+    <section class="bespoke-section">
+        <div class="container heritage-grid">
+            <div class="heritage-content">
+                <span class="section-tag">Values & Creed</span>
+                <h2 class="section-title">The Four Tenets of Aurelius</h2>
+                <div style="margin-top: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--gold-pale); font-family: var(--font-heading); margin-bottom: 0.3rem;"><i class="fas fa-hand-sparkles text-gold"></i> 100% In-House Manufacture</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 300;">From initial caliber blueprints to final regulation, every single component is designed, machined, hand-finished, and assembled in our Swiss ateliers.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--gold-pale); font-family: var(--font-heading); margin-bottom: 0.3rem;"><i class="fas fa-award text-gold"></i> Poinçon de Genève Standards</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 300;">Every bridge is chamfered with anglage, screw heads mirror-polished, and gear teeth polished with diamond paste for friction-free longevity.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--gold-pale); font-family: var(--font-heading); margin-bottom: 0.3rem;"><i class="fas fa-infinity text-gold"></i> Restoration in Perpetuity</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 300;">We maintain archival blueprints and tooling to restore, service, or recreate parts for any Aurelius timepiece produced since 1888.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-frame">
+                <div class="frame-border">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+                </div>
+                <div class="heritage-illustration-card">
+                    <i class="fas fa-drafting-compass heritage-icon"></i>
+                    <h3 class="heritage-lead">"To build an Aurelius is not a task of hours, but an act of devotion."</h3>
+                    <span class="heritage-quote-author">— The Master Horologists of Le Brassus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="journal-section">
+        <div class="container">
+            <div class="journal-box">
+                <span class="section-tag">Haute Horlogerie Journal</span>
+                <h2 class="section-title">Subscribe to The Aurelius Monograph</h2>
+                <p class="section-desc">Receive our limited-edition quarterly collector book on complications and historical movements.</p>
+                <form class="newsletter-form journal-form" data-source="about_page_monograph" novalidate>
+                    <input type="email" class="journal-input" placeholder="Enter your private email address..." required>
+                    <button type="submit" class="btn-gold"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1rem;">
+                        <span class="brand-name">AURELIUS & CO.</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Independent Haute Horlogerie manufacture dedicated to the eternal pursuit of mechanical poetry and Swiss watchmaking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Maison</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">Manufacture History</a></li>
+                        <li><a href="experience.html">Bespoke Atelier</a></li>
+                        <li><a href="contact.html">Global Salons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Disciplines</h4>
+                    <ul class="footer-nav">
+                        <li><a href="experience.html">Flying Tourbillons</a></li>
+                        <li><a href="experience.html">Grand Feu Enamelling</a></li>
+                        <li><a href="experience.html">Minute Repeaters</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Private Concierge</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">VIP Appointments</a></li>
+                        <li><a href="contact.html#bespoke-inquiry">Custom Commission</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelius & Co. Haute Horlogerie. All rights reserved.</p>
+                <p>Connected with Supabase Database</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/supabase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

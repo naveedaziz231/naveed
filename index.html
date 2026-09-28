@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIUS & CO. | Haute Horlogerie & Timeless Precision</title>
+    
+    <!-- Meta Description & SEO -->
+    <meta name="description" content="Aurelius & Co. Haute Horlogerie. Independent Swiss master watchmaking atelier crafting bespoke mechanical complications, tourbillons, and celestial timepieces.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Official Supabase JS Client (v2) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Subtle Background Texture -->
+    <div class="luxury-noise"></div>
+
+    <!-- SVG Gradients Definition -->
+    <svg width="0" height="0" class="svg-defs">
+        <defs>
+            <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f5e6be" />
+                <stop offset="50%" stop-color="#d4af37" />
+                <stop offset="100%" stop-color="#aa7c11" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- =========================================================================
+         NAVIGATION HEADER
+         ========================================================================= -->
+    <header class="luxury-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-emblem">
+                    <!-- Luxury Crown & Gear Icon -->
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldLinear)" stroke-width="2" stroke-dasharray="4 2"/>
+                        <polygon points="50,15 62,38 88,38 67,54 75,78 50,64 25,78 33,54 12,38 38,38" fill="url(#goldLinear)"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">AURELIUS</span>
+                    <span class="brand-sub">GENÈVE • 1888</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Maison</a></li>
+                <li><a href="about.html" class="nav-link">Heritage</a></li>
+                <li><a href="experience.html" class="nav-link">Craftsmanship</a></li>
+                <li><a href="contact.html" class="nav-link">Salons & Inquiries</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Supabase Live Connection Status Pill -->
+                <div class="supabase-status-pill" id="supabaseStatusBtn" title="Supabase Database Status">
+                    <span class="status-dot"></span>
+                    <span>Supabase Live</span>
+                </div>
+
+                <a href="#appointment-section" class="btn-gold">Private Viewing</a>
+
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         HERO SECTION: THE ART OF TIMELINESS
+         ========================================================================= -->
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="section-tag">Haute Horlogerie Manufacture</span>
+                <p class="hero-subtitle">Perfection in Every Micro-Second</p>
+                <h1 class="hero-title">Timeless Artistry. <br><span class="gold-gradient-text">Eternal Precision.</span></h1>
+                <p class="hero-description">
+                    Dedicated to the pinnacle of Swiss mechanical mastery since 1888. Every complication is hand-sculpted in our Vallée de Joux atelier, uniting celestial mechanics with bespoke metallurgical perfection.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#bespoke-atelier" class="btn-gold"><i class="fas fa-compass"></i> Bespoke Atelier</a>
+                    <a href="#appointment-section" class="btn-outline-gold"><i class="fas fa-gem"></i> Request Appointment</a>
+                </div>
+
+                <div class="hero-stats-row">
+                    <div class="stat-item">
+                        <h3>1888</h3>
+                        <p>Established in Geneva</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>28,800</h3>
+                        <p>Vibrations / Hour</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Hand-Finished Calibers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Horological Chronometer Display -->
+            <div class="hero-visual-wrapper">
+                <div class="floating-badge badge-top">
+                    <div class="badge-label">CALIBER AH-89</div>
+                    <div class="badge-val">Tourbillon Régulateur</div>
+                </div>
+
+                <div class="watch-stage">
+                    <div class="watch-outer-ring"></div>
+                    
+                    <div class="watch-inner-dial">
+                        <div class="guilloche-pattern"></div>
+                        
+                        <!-- Hour markers -->
+                        <span class="dial-marker marker-12">XII</span>
+                        <span class="dial-marker marker-3">III</span>
+                        <span class="dial-marker marker-6">VI</span>
+                        <span class="dial-marker marker-9">IX</span>
+
+                        <!-- Real-Time Interactive Hands -->
+                        <div class="hand hand-hour" id="watchHourHand"></div>
+                        <div class="hand hand-minute" id="watchMinuteHand"></div>
+                        <div class="hand hand-second" id="watchSecondHand"></div>
+                        <div class="hand-center-pin"></div>
+
+                        <!-- Tourbillon Sub-Dial -->
+                        <div class="tourbillon-cage">
+                            <div class="tourbillon-wheel"></div>
+                            <div class="tourbillon-bridge"></div>
+                            <div class="tourbillon-jewel"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-badge badge-bottom">
+                    <div class="badge-label">PRECISION RATING</div>
+                    <div class="badge-val">COSC Chronometer Certified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 1: PHILOSOPHY & HERITAGE
+         ========================================================================= -->
+    <section class="heritage-section">
+        <div class="container heritage-grid">
+            <div class="heritage-frame">
+                <div class="frame-border">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+                </div>
+                <div class="heritage-illustration-card">
+                    <i class="fas fa-hourglass-half heritage-icon"></i>
+                    <h3 class="heritage-lead">"Time is the supreme luxury. We do not merely measure it; we sculpt its poetry."</h3>
+                    <span class="heritage-quote-author">— Antoine Aurelius, Master Watchmaker</span>
+                </div>
+            </div>
+
+            <div class="heritage-content">
+                <span class="section-tag">Manufacture Philosophy</span>
+                <h2 class="section-title">The Sacred Geometry of Mechanical Mastery</h2>
+                <p>
+                    Nestled within the snow-covered valleys of Le Brassus, the Aurelius atelier embodies over a century of unrelenting dedication to mechanical horology. Unlike industrial mass production, our craft begins where machines reach their limitations.
+                </p>
+                <p>
+                    Each balance wheel, pinion, and hand-chamfered bridge is shaped by master artisans whose lineage spans generations. It takes upwards of 400 hours of devoted handcrafting to bring a single Aurelius movement to life.
+                </p>
+                <a href="about.html" class="btn-outline-gold"><i class="fas fa-book-open"></i> Explore Our Heritage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: MASTER CRAFTSMANSHIP PILLARS (NO PRODUCTS, ONLY HOROLOGICAL ART)
+         ========================================================================= -->
+    <section class="craftsmanship-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Grand Complications & Metiers d'Art</span>
+                <h2 class="section-title">The Pillars of Aurelius Horology</h2>
+                <p class="section-desc">Four distinct disciplines united under one roof to forge extraordinary mechanical masterpieces.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <span class="pillar-num">01 / CALIBER</span>
+                    <h3 class="pillar-title">Flying Tourbillon & Complications</h3>
+                    <p class="pillar-desc">Defying earth's gravitational pull through a featherlight cage revolving every 60 seconds, balancing kinetic beauty with ultra-precision chronometry.</p>
+                    <ul class="pillar-feature-list">
+                        <li><i class="fas fa-check"></i> Hand-polished titanium cage</li>
+                        <li><i class="fas fa-check"></i> 72-hour power reserve</li>
+                        <li><i class="fas fa-check"></i> Côtes de Genève finishing</li>
+                    </ul>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">02 / METALLURGY</span>
+                    <h3 class="pillar-title">Noble & Rare Metallurgies</h3>
+                    <p class="pillar-desc">Forging cases exclusively in ethical 18-karat royal rose gold, 950 platinum, tantalum, and ultra-dense aeronautical forged carbon composites.</p>
+                    <ul class="pillar-feature-list">
+                        <li><i class="fas fa-check"></i> Responsibly sourced gold</li>
+                        <li><i class="fas fa-check"></i> Scratch-resistant sapphire crystal</li>
+                        <li><i class="fas fa-check"></i> Hand-brushed satin bevelling</li>
+                    </ul>
+                </div>
+
+                <div class="pillar-card">
+                    <span class="pillar-num">03 / ARTISTRY</span>
+                    <h3 class="pillar-title">Grand Feu Enamel & Guilloché</h3>
+                    <p class="pillar-desc">Dials treated as miniature canvases, fired at over 800°C for eternal luster, etched with hypnotic hand-turned rose-engine rose patterns.</p>
+                    <ul class="pillar-feature-list">
+                        <li><i class="fas fa-check"></i> Traditional 18th-century enamel</li>
+                        <li><i class="fas fa-check"></i> Solid silver dial blanks</li>
+                        <li><i class="fas fa-check"></i> Blued steel Breguet hands</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: BESPOKE ATELIER CONFIGURATOR (INTERACTIVE EXPERIENCE)
+         ========================================================================= -->
+    <section class="bespoke-section" id="bespoke-atelier">
+        <div class="container bespoke-grid">
+            <div class="bespoke-intro">
+                <span class="section-tag">Private Commissioning</span>
+                <h2 class="section-title">The Bespoke Atelier Experience</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    No two Aurelius timepieces need ever be identical. We offer collectors the rare privilege of commissioning custom one-of-a-kind calibers, bespoke case engravings, and customized dial guilloché motifs.
+                </p>
+                <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 0.95rem;">
+                    Experiment with preferred aesthetics below and file a direct bespoke inquiry directly to our Vallée de Joux artisans.
+                </p>
+                <a href="#appointment-section" class="btn-gold"><i class="fas fa-feather-alt"></i> Commission a Piece</a>
+            </div>
+
+            <div class="atelier-config-card">
+                <!-- Config Group 1 -->
+                <div class="config-group" data-config-type="metal">
+                    <span class="config-label">1. Select Noble Metallurgy:</span>
+                    <div class="config-options">
+                        <button class="config-btn active" data-value="18K Rose Gold">18K Rose Gold</button>
+                        <button class="config-btn" data-value="950 Platinum">950 Platinum</button>
+                        <button class="config-btn" data-value="Tantalum Slate">Tantalum Slate</button>
+                        <button class="config-btn" data-value="Forged Carbon">Forged Carbon</button>
+                    </div>
+                </div>
+
+                <!-- Config Group 2 -->
+                <div class="config-group" data-config-type="complication">
+                    <span class="config-label">2. Master Complication:</span>
+                    <div class="config-options">
+                        <button class="config-btn active" data-value="Flying Tourbillon">Flying Tourbillon</button>
+                        <button class="config-btn" data-value="Perpetual Moonphase">Perpetual Moonphase</button>
+                        <button class="config-btn" data-value="Minute Repeater">Minute Repeater</button>
+                        <button class="config-btn" data-value="Dual Time GMT">Dual Time GMT</button>
+                    </div>
+                </div>
+
+                <!-- Config Group 3 -->
+                <div class="config-group" data-config-type="dial">
+                    <span class="config-label">3. Dial Finish & Art:</span>
+                    <div class="config-options">
+                        <button class="config-btn active" data-value="Obsidian Guilloché">Obsidian Guilloché</button>
+                        <button class="config-btn" data-value="Grand Feu Royal Blue">Grand Feu Royal Blue</button>
+                        <button class="config-btn" data-value="Skeletonized Sapphire">Skeletonized Sapphire</button>
+                        <button class="config-btn" data-value="Champagne Frosted">Champagne Frosted</button>
+                    </div>
+                </div>
+
+                <div class="atelier-preview-box">
+                    <h4 class="preview-title" id="previewTitle">Bespoke Atelier Specification</h4>
+                    <p class="preview-summary" id="bespokeSummaryText">
+                        A unique haute horlogerie creation forged in 18K Rose Gold, featuring a master-crafted Flying Tourbillon with hand-engraved Obsidian Guilloché.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: VIP PRIVATE APPOINTMENT & CONCIERGE (SUPABASE CONNECTED)
+         ========================================================================= -->
+    <section class="appointment-section" id="appointment-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Private Salons & Consultations</span>
+                <h2 class="section-title">Schedule a Private VIP Consultation</h2>
+                <p class="section-desc">Experience our horological creations in the discretion of our private boutique salons worldwide or via dedicated video concierge.</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <form id="vipAppointmentForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Lord Alexander Sterling" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Direct Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. alexander@sterling.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telephone / Concierge Mobile</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+41 22 700 88 00">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="boutique">Preferred Salon</label>
+                            <select id="boutique" name="boutique" class="form-control">
+                                <option value="Geneva Flagship Salon">Geneva Flagship Salon (Rue du Rhône)</option>
+                                <option value="London Mayfair Atelier">London Mayfair Atelier (New Bond St)</option>
+                                <option value="New York Madison Salon">New York Madison Avenue Salon</option>
+                                <option value="Dubai DIFC Private Lounge">Dubai DIFC Private Lounge</option>
+                                <option value="Tokyo Ginza Atelier">Tokyo Ginza Salon</option>
+                                <option value="Digital Haute Horlogerie Concierge">Digital Private Video Concierge</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Nature of Consultation</label>
+                            <select id="serviceType" name="serviceType" class="form-control">
+                                <option value="Bespoke Commission Consultation">Bespoke Commission Consultation</option>
+                                <option value="Private Complications Viewing">Private Complications Viewing</option>
+                                <option value="Heritage Restoration & Servicing">Heritage Restoration & Servicing</option>
+                                <option value="Collector Portfolio Curation">Collector Portfolio Curation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Private Notes & Specifications</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Kindly detail any specific complications, metallurgies, or requests you wish to discuss with our master horologist..."></textarea>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn-gold" style="min-width: 260px;">
+                            <i class="fas fa-lock"></i> Request Private Viewing
+                        </button>
+                        <p class="form-footer-note">
+                            <i class="fas fa-shield-alt text-gold"></i> All requests are handled under strict confidentiality and transmitted securely to Supabase.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: GLOBAL BOUTIQUES & SALONS
+         ========================================================================= -->
+    <section class="salons-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Private Boutiques</span>
+                <h2 class="section-title">Sanctuaries of Haute Horlogerie</h2>
+                <p class="section-desc">Discover our masterworks at exclusive private salons across the globe.</p>
+            </div>
+
+            <div class="salons-grid">
+                <div class="salon-card">
+                    <h3 class="salon-city">GENÈVE</h3>
+                    <p class="salon-address">42 Rue du Rhône<br>1204 Geneva, Switzerland</p>
+                    <p class="salon-hours">By Private Appointment</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">LONDON</h3>
+                    <p class="salon-address">18 New Bond Street<br>Mayfair, London W1S 2RB</p>
+                    <p class="salon-hours">By Private Appointment</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">NEW YORK</h3>
+                    <p class="salon-address">693 Madison Avenue<br>New York, NY 10065</p>
+                    <p class="salon-hours">By Private Appointment</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">DUBAI</h3>
+                    <p class="salon-address">Gate Village 08, DIFC<br>Dubai, United Arab Emirates</p>
+                    <p class="salon-hours">By Private Appointment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: PRIVATE CLUB & HAUTE HORLOGERIE JOURNAL (SUPABASE NEWSLETTER)
+         ========================================================================= -->
+    <section class="journal-section">
+        <div class="container">
+            <div class="journal-box">
+                <span class="section-tag">The Aurelius Gazette</span>
+                <h2 class="section-title">Join The Aurelius Private Collector Club</h2>
+                <p class="section-desc">Receive strictly confidential invitations to private salon unveilings, horological monographs, and technical papers on grand complications.</p>
+                
+                <form class="newsletter-form journal-form" data-source="homepage_gazette" novalidate>
+                    <input type="email" class="journal-input" placeholder="Enter your private email address..." required>
+                    <button type="submit" class="btn-gold"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         FOOTER
+         ========================================================================= -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1rem;">
+                        <span class="brand-name">AURELIUS & CO.</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Independent Haute Horlogerie manufacture dedicated to the eternal pursuit of mechanical poetry, grand complications, and bespoke Swiss watchmaking.
+                    </p>
+                    <div class="text-gold" style="font-size: 0.8rem; letter-spacing: 1px;">
+                        <i class="fas fa-map-marker-alt"></i> Vallée de Joux & Geneva, Switzerland
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Maison</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">Manufacture History</a></li>
+                        <li><a href="about.html#philosophy">Horological Philosophy</a></li>
+                        <li><a href="experience.html">Bespoke Atelier</a></li>
+                        <li><a href="experience.html#restoration">Restoration Archive</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Disciplines</h4>
+                    <ul class="footer-nav">
+                        <li><a href="experience.html">Flying Tourbillons</a></li>
+                        <li><a href="experience.html">Grand Feu Enamelling</a></li>
+                        <li><a href="experience.html">Minute Repeaters</a></li>
+                        <li><a href="experience.html">Perpetual Calendars</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Private Concierge</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Global Salons</a></li>
+                        <li><a href="#appointment-section">VIP Viewing Request</a></li>
+                        <li><a href="contact.html#bespoke-inquiry">Custom Commission</a></li>
+                        <li><a href="javascript:void(0)" onclick="document.getElementById('supabaseStatusBtn').click()">Database Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelius & Co. Haute Horlogerie. All rights reserved.</p>
+                <p>Crafted with Timeless Elegance &bull; Connected with Supabase</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================================
+         SUPABASE DIAGNOSTIC MODAL
+         ========================================================================= -->
+    <div class="luxury-modal-overlay" id="supabaseStatusModal">
+        <div class="luxury-modal">
+            <button class="modal-close-btn" id="closeSupabaseModal">&times;</button>
+            <h3 class="modal-title"><i class="fas fa-database text-gold"></i> Supabase Integration Matrix</h3>
+            <p class="modal-desc">Real-time status of your connected Supabase project for VIP appointments, bespoke inquiries, and private collector subscriptions.</p>
+            
+            <div class="status-check-box">
+                <div class="status-row">
+                    <span class="text-muted">Supabase Project Ref:</span>
+                    <span style="font-family: monospace; color: var(--gold-pale);">xyqwuwayvwmhjeibdksk</span>
+                </div>
+                <div class="status-row">
+                    <span class="text-muted">Endpoint:</span>
+                    <span style="font-family: monospace; color: #93c5fd;">https://xyqwuwayvwmhjeibdksk.supabase.co</span>
+                </div>
+                <div class="status-row">
+                    <span class="text-muted">Live Handshake:</span>
+                    <span id="modalSupabaseStatus"><span style="color:#10b981;"><i class="fas fa-check-circle"></i> Connected</span></span>
+                </div>
+                <div class="status-row">
+                    <span class="text-muted">API Latency:</span>
+                    <span id="modalSupabasePing" style="color: var(--gold-primary);">~45ms</span>
+                </div>
+                <div class="status-row">
+                    <span class="text-muted">Database Tables:</span>
+                    <span style="color: #cbd5e1;">appointments, inquiries, newsletter_subscribers</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button class="btn-outline-gold" id="checkConnectionBtn"><i class="fas fa-sync-alt"></i> Re-test Connection</button>
+                <button class="btn-gold" onclick="document.getElementById('supabaseStatusModal').classList.remove('active')">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/supabase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

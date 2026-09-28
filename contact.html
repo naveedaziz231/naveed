@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salons & Private Concierge | AURELIUS & CO.</title>
+    
+    <meta name="description" content="Contact Aurelius & Co. Haute Horlogerie. Book private salon appointments in Geneva, London, New York, Tokyo, Dubai or submit a bespoke commission inquiry.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Official Supabase JS Client (v2) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="luxury-noise"></div>
+
+    <!-- Navigation Header -->
+    <header class="luxury-header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">AURELIUS</span>
+                    <span class="brand-sub">GENÈVE • 1888</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Maison</a></li>
+                <li><a href="about.html" class="nav-link">Heritage</a></li>
+                <li><a href="experience.html" class="nav-link">Craftsmanship</a></li>
+                <li><a href="contact.html" class="nav-link active">Salons & Inquiries</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="supabase-status-pill" id="supabaseStatusBtn" title="Supabase Database Status">
+                    <span class="status-dot"></span>
+                    <span>Supabase Live</span>
+                </div>
+                <a href="#vip-appointment" class="btn-gold">Private Viewing</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 55vh; padding: 11rem 0 4rem; text-align: center;">
+        <div class="container">
+            <span class="section-tag">Global Presence & Private Salons</span>
+            <h1 class="hero-title">Private Concierge & <span class="gold-gradient-text">Salons</span></h1>
+            <p class="section-desc" style="margin-top: 1rem;">
+                Receive personalized attention from our Master Horologists in our exclusive boutiques or submit your bespoke commission dossier directly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Salons Directory -->
+    <section class="salons-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Global Destinations</span>
+                <h2 class="section-title">Our Private Boutiques</h2>
+                <p class="section-desc">By appointment only, to preserve the complete discretion and comfort of our patrons.</p>
+            </div>
+
+            <div class="salons-grid">
+                <div class="salon-card">
+                    <h3 class="salon-city">GENÈVE FLAGSHIP</h3>
+                    <p class="salon-address">42 Rue du Rhône<br>1204 Geneva, Switzerland<br><i class="fas fa-phone-alt text-gold"></i> +41 22 700 88 00</p>
+                    <p class="salon-hours">Monday – Saturday (Private Appointment)</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">LONDON MAYFAIR</h3>
+                    <p class="salon-address">18 New Bond Street<br>Mayfair, London W1S 2RB<br><i class="fas fa-phone-alt text-gold"></i> +44 20 7946 0912</p>
+                    <p class="salon-hours">Monday – Saturday (Private Appointment)</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">NEW YORK MADISON</h3>
+                    <p class="salon-address">693 Madison Avenue<br>New York, NY 10065<br><i class="fas fa-phone-alt text-gold"></i> +1 212 555 0199</p>
+                    <p class="salon-hours">Tuesday – Saturday (Private Appointment)</p>
+                </div>
+
+                <div class="salon-card">
+                    <h3 class="salon-city">DUBAI DIFC</h3>
+                    <p class="salon-address">Gate Village 08, DIFC<br>Dubai, United Arab Emirates<br><i class="fas fa-phone-alt text-gold"></i> +971 4 362 7000</p>
+                    <p class="salon-hours">Sunday – Thursday (Private Appointment)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bespoke Commission Inquiry Form (Direct to Supabase 'inquiries' table) -->
+    <section class="bespoke-section" id="bespoke-inquiry">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Private Atelier Commission</span>
+                <h2 class="section-title">Submit a Bespoke Commission Dossier</h2>
+                <p class="section-desc">Share your specific horological aspirations. Our Vallée de Joux atelier will contact you to initiate feasibility studies and architectural sketches.</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <form id="bespokeInquiryForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="clientName">Your Full Name *</label>
+                            <input type="text" id="clientName" name="clientName" class="form-control" placeholder="e.g. Duke Charles Montgomery" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clientEmail">Email Address *</label>
+                            <input type="email" id="clientEmail" name="email" class="form-control" placeholder="e.g. charles@montgomery.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clientPhone">Telephone / Mobile</label>
+                            <input type="tel" id="clientPhone" name="phone" class="form-control" placeholder="+44 7700 900077">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiryType">Commission Focus</label>
+                            <select id="inquiryType" name="inquiryType" class="form-control">
+                                <option value="Bespoke Grand Complication Piece">Bespoke Grand Complication Piece</option>
+                                <option value="Custom Tourbillon & Dial Guilloché">Custom Tourbillon & Dial Guilloché</option>
+                                <option value="Historical Caliber Restoration">Historical Caliber Restoration</option>
+                                <option value="Private Collector Salon VIP Access">Private Collector Salon VIP Access</option>
+                                <option value="Press & Horological Media Inquiry">Press & Horological Media Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Complication & Aesthetic Interests (Select All Relevant)</label>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 0.5rem;">
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="Flying Tourbillon" checked> Flying Tourbillon
+                                </label>
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="Minute Repeater"> Minute Repeater
+                                </label>
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="Perpetual Moonphase"> Perpetual Moonphase
+                                </label>
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="18K Rose Gold Metallurgy"> 18K Rose Gold Metallurgy
+                                </label>
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="950 Platinum Metallurgy"> 950 Platinum Metallurgy
+                                </label>
+                                <label style="text-transform: none; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" name="interests" value="Grand Feu Enamelling"> Grand Feu Enamelling
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Desired Commission Timeline</label>
+                            <select id="timeline" name="timeline" class="form-control">
+                                <option value="Within 6 Months">Within 6 Months</option>
+                                <option value="6 to 12 Months">6 to 12 Months</option>
+                                <option value="Flexible / Masterwork Priority" selected>Flexible / Masterwork Priority</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="inquiryNotes">Specific Wishes & Aesthetic Ideas</label>
+                            <textarea id="inquiryNotes" name="notes" class="form-control" placeholder="Detail any personal engravings, dial motifs, or specific complications you wish to discuss..."></textarea>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn-gold" style="min-width: 280px;">
+                            <i class="fas fa-paper-plane"></i> Transmit Bespoke Dossier
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Appointment Form (Direct to Supabase 'appointments' table) -->
+    <section class="appointment-section" id="vip-appointment">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Direct Scheduling</span>
+                <h2 class="section-title">Reserve a Private Viewing</h2>
+                <p class="section-desc">Schedule a one-on-one session at your preferred Aurelius salon.</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <form id="vipAppointmentForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Lady Victoria Vance" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Direct Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. victoria@vance.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone / Mobile</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 212 555 0199">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="boutique">Select Salon Location</label>
+                            <select id="boutique" name="boutique" class="form-control">
+                                <option value="Geneva Flagship Salon">Geneva Flagship Salon (Rue du Rhône)</option>
+                                <option value="London Mayfair Atelier">London Mayfair Atelier (New Bond St)</option>
+                                <option value="New York Madison Salon">New York Madison Avenue Salon</option>
+                                <option value="Dubai DIFC Private Lounge">Dubai DIFC Private Lounge</option>
+                                <option value="Digital Private Video Concierge">Digital Private Video Concierge</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select id="serviceType" name="serviceType" class="form-control">
+                                <option value="Private Complications Viewing">Private Complications Viewing</option>
+                                <option value="Bespoke Commission Consultation">Bespoke Commission Consultation</option>
+                                <option value="Heritage Restoration">Heritage Restoration</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Private Notes</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Any preferences or specific requirements for your appointment..."></textarea>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn-gold" style="min-width: 260px;">
+                            <i class="fas fa-lock"></i> Request Private Viewing
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1rem;">
+                        <span class="brand-name">AURELIUS & CO.</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Independent Haute Horlogerie manufacture dedicated to the eternal pursuit of mechanical poetry and Swiss watchmaking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Maison</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">Manufacture History</a></li>
+                        <li><a href="experience.html">Bespoke Atelier</a></li>
+                        <li><a href="contact.html">Global Salons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Disciplines</h4>
+                    <ul class="footer-nav">
+                        <li><a href="experience.html">Flying Tourbillons</a></li>
+                        <li><a href="experience.html">Grand Feu Enamelling</a></li>
+                        <li><a href="experience.html">Minute Repeaters</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Private Concierge</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#vip-appointment">VIP Appointments</a></li>
+                        <li><a href="#bespoke-inquiry">Custom Commission</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelius & Co. Haute Horlogerie. All rights reserved.</p>
+                <p>Connected with Supabase Database</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/supabase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
